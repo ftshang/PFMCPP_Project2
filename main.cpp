@@ -16,14 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
- 
- 
- 
- 
- 
- 
- 
- 
+ 1. int (integer values)
+ 2. bool (boolean values [true / false])
+ 3. float (floating point values)
+ 4. double (decimal points values)
+ 5. char (character values)
+ 6. unsigned int (unsigned integer values)
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -59,10 +57,32 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
-    
 
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    int temperature = 68;
+    int hours = 6;
+    int population = 1000;
+
+    double price = 1.50;
+    double taxRate = 0.10;
+    double totalSalePrice = 3.5;
+
+    float piValue = 3.14159f;
+    float radius = 3.5;
+    float area = 38.4844775f;
+
+    bool status = false;
+    bool gameOver = true;
+    bool playAgain = false;
+
+    char firstInitial = 'F';
+    char middleInitial = 'T';
+    char lastInitial = 'S';
+
+    unsigned int positiveNum = 500;
+    unsigned int numDays = 30;
+    unsigned int minRemaining = 45;
+
+    ignoreUnused(number, temperature, hours, population, price, taxRate, totalSalePrice,piValue, radius, area, status, gameOver, playAgain, firstInitial, middleInitial, lastInitial, positiveNum, numDays, minRemaining);
 }
 
 /*
@@ -79,42 +99,90 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+void printBill(double price = 0.00, double tip = 0.00, double total = 0.00)
+{
+    ignoreUnused(price, tip, total);
+}
 
 /*
  2)
  */
+bool restartExperiment(int totalMin = 45, double startTemp = 68.5)
+{
+    ignoreUnused(totalMin, startTemp);
+    return {};
+}
 
 /*
  3)
  */
+char getFirstInitial(int numOfPerson, int size = 10)
+{
+    ignoreUnused(numOfPerson, size);
+    return {};
+}
 
 /*
  4)
  */
+double findCircleArea(double radius = 0.00, double pi = 3.14159)
+{
+    ignoreUnused(radius, pi);
+    return {};
+}
 
 /*
  5)
  */
+unsigned int getDayOfMonth(int month = 1, int year = 2000)
+{
+    ignoreUnused(month, year);
+    return {};
+}
 
 /*
  6)
  */
+float getCompoundInterest(int amount = 0, float interestRate = 0.07f, int accNumber = 0)
+{
+    ignoreUnused(amount, interestRate, accNumber);
+    return {};
+}
 
 /*
  7)
  */
+int getMenuSelection(int randomNum, int numberOptions = 10)
+{
+    ignoreUnused(randomNum, numberOptions);
+    return {};
+}
 
 /*
  8)
  */
+void displayID(int badgeNum, int month, int day, int year, char firstLetter = 'A', char lastLetter = 'Z')
+{
+    ignoreUnused(badgeNum, month, day, year, firstLetter, lastLetter);
+}
 
 /*
  9)
  */
+double getVolume(double length = 0.00, double width = 0.00, double height = 1.00)
+{
+    ignoreUnused(length, width, height);
+    return {};
+}
 
 /*
  10)
  */
+bool getGameStatus(int numOfPlayers, int playerTurn, char playerColor = 'R')
+{
+    ignoreUnused(numOfPlayers, playerTurn, playerColor);
+    return {};
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -136,27 +204,37 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    printBill(1.10, 0.50, 1.50);
+
     //2)
-    
+    auto status = restartExperiment();
+
     //3)
-    
+    auto firstInitial = getFirstInitial(5, 50);
+
     //4)
-    
+    auto area = findCircleArea(2.55);
+
     //5)
-    
+    auto day = getDayOfMonth(5, 1999);
+
     //6)
-    
+    auto amount = getCompoundInterest(50000, 0.10f, 10532);
+
     //7)
-    
+    auto selection = getMenuSelection(3);
+
     //8)
-    
+    displayID(1503, 7, 24, 1999, 'F', 'E');
+
     //9)
-    
+    auto volume = getVolume(1.15, 5.52, 6.33);
+
     //10)
-    
-    
-    ignoreUnused(carRented);
+    auto winner = getGameStatus(15, 3, 'Y');
+
+    ignoreUnused(carRented, status, firstInitial, area, day, amount, selection, volume, winner);
+
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
