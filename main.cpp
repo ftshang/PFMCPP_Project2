@@ -82,9 +82,7 @@ void variableDeclarations()
     unsigned int numDays = 30;
     unsigned int minRemaining = 45;
 
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
-
-    ignoreUnused(temperature, hours, population, price, taxRate, totalSalePrice, piValue, radius, area, status, gameOver, playAgain, firstInitial, middleInitial, lastInitial, positiveNum, numDays, minRemaining);
+    ignoreUnused(number, temperature, hours, population, price, taxRate, totalSalePrice,piValue, radius, area, status, gameOver, playAgain, firstInitial, middleInitial, lastInitial, positiveNum, numDays, minRemaining);
 }
 
 /*
@@ -204,45 +202,38 @@ int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
     auto carRented = rentACar(6, 2); 
-    ignoreUnused(carRented);
     
     //1)
     printBill(1.10, 0.50, 1.50);
 
     //2)
     auto status = restartExperiment();
-    ignoreUnused(status);
 
     //3)
     auto firstInitial = getFirstInitial(5, 50);
-    ignoreUnused(firstInitial);
 
     //4)
     auto area = findCircleArea(2.55);
-    ignoreUnused(area);
 
     //5)
     auto day = getDayOfMonth(5, 1999);
-    ignoreUnused(day);
 
     //6)
     auto amount = getCompoundInterest(50000, 0.10f, 10532);
-    ignoreUnused(amount);
 
     //7)
     auto selection = getMenuSelection(3);
-    ignoreUnused(selection);
 
     //8)
     displayID(1503, 7, 24, 1999, 'F', 'E');
 
     //9)
     auto volume = getVolume(1.15, 5.52, 6.33);
-    ignoreUnused(volume);
 
     //10)
     auto winner = getGameStatus(15, 3, 'Y');
-    ignoreUnused(winner);
+
+    ignoreUnused(carRented, status, firstInitial, area, day, amount, selection, volume, winner);
 
     std::cout << "good to go!" << std::endl;
     return 0;    
